@@ -21468,7 +21468,7 @@
 	        key: 'handleSecondForm',
 	        value: function handleSecondForm() {
 	            this.setState({
-	                secondFormVisible: !secondFormVisible
+	                secondFormVisible: !this.state.secondFormVisible
 	            });
 	        }
 	    }, {
@@ -21659,13 +21659,15 @@
 
 	    _createClass(ToggleForm, [{
 	        key: 'handleToggleForm',
-	        value: function handleToggleForm(event) {}
+	        value: function handleToggleForm(event) {
+	            if (this.props.firstFormClicked) this.props.handleClick();
+	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { onClick: this.handleToggleForm },
+	                { onClick: this.handleToggleForm.bind(this) },
 	                'X'
 	            );
 	        }

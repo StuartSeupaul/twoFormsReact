@@ -14,7 +14,7 @@ class FormsDisplay extends React.Component {
 
     handleSecondForm(){
         this.setState({
-            secondFormVisible : !secondFormVisible
+            secondFormVisible : !this.state.secondFormVisible
         })
     }
 
